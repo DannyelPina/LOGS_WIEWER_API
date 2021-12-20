@@ -5,9 +5,9 @@ export default class LogSources extends BaseSchema {
 
     public async up() {
         this.schema.createTable(this.tableName, (table) => {
-            table.increments('id')
+            table.uuid('id')
             table.string('name')
-            table.string('display_order')
+            table.integer('display_order')
 
             /**
              * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
